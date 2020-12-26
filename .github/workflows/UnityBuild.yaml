@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@main
-    - run: openssl aes-256-cbc -d -in Unity_v2018.x.ulf-cipher -k ${CYPHER_KEY} >> /Unity_v2018.x.ulf
+    - run: openssl aes-256-cbc -d -in Unity_v2018.x.ulf-cipher -k ${CYPHER_KEY} -md md5 >> /Unity_v2018.x.ulf
       env:
         CYPHER_KEY: ${{ secrets.CYPHERKEY }}
     - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile /Unity_v2018.x.ulf || exit 0
