@@ -9,10 +9,7 @@ on:
 jobs:
   editorTestJob:
     runs-on: ubuntu-latest
-    container: docker://gableroux/unity3d:${{ matrix.unity-tag }}
-    strategy:
-      matrix:
-        unity-tag: [2018.4.12f1]
+    container: docker://gableroux/unity3d:2018.4.12f1-webgl
 
     steps:
     - uses: actions/checkout@main
