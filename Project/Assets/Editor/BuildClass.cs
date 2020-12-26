@@ -8,7 +8,7 @@ public class BuildClass
     {
         // ビルド対象シーンリスト
         string[] sceneList = {
-            "./Project/Assets/Scenes/SampleScene.unity"
+            "/Project/Assets/Scenes/SampleScene.unity"
         };
         
         string[] args = System.Environment.GetCommandLineArgs();
