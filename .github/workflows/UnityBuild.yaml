@@ -15,7 +15,7 @@ jobs:
         unity-tag: [2018.4.12f1]
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     - run: openssl aes-256-cbc -d -in Unity_v2018.x.ulf-cipher -k ${CYPHER_KEY} >> /Unity_v2018.x.ulf
       env:
         CYPHER_KEY: ${{ secrets.cypherkey }}
