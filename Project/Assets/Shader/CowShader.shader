@@ -46,11 +46,10 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
-                // apply fog
-                UNITY_APPLY_FOG(i.fogCoord, col);
-                return col;
+				fixed radius = 0.4;
+				fixed r = distance(i.uv, fixed2(0.5,0.5));
+				return step(radius, r);
+
             }
             ENDCG
         }
